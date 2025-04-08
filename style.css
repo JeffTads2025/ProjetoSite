@@ -27,6 +27,11 @@ header {
   z-index: 999;
 }
 
+.logotipo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 #hamburger {
   display: none;
   font-size: 24px;
@@ -43,7 +48,7 @@ header {
 #nav-links ul li a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   transition: 0.3s;
 }
 
@@ -58,6 +63,7 @@ header {
   border: none;
   border-radius: 25px;
   font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -157,18 +163,29 @@ header {
 
 .sobre {
   padding: 60px 10%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
   background-color: #121826;
+}
+
+.titulo-sobre {
+  text-align: center;
+  color: #61dafb;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.colunas-recursos {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .box-item {
   background-color: #1e2633;
   padding: 20px;
   border-radius: 15px;
-  width: 300px;
+  flex: 1;
+  min-width: 250px;
   text-align: center;
 }
 
@@ -266,6 +283,11 @@ footer {
     text-align: center;
   }
 
+  .colunas-recursos {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .galeria-grid {
     flex-direction: column;
     align-items: center;
@@ -274,11 +296,6 @@ footer {
   .galeria-grid img {
     width: 90%;
     height: auto;
-  }
-
-  .sobre {
-    flex-direction: column;
-    align-items: center;
   }
 
   .box-img img {
