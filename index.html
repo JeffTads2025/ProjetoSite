@@ -32,7 +32,7 @@
       <img src="imagens/CATimagem2d-removebg-preview.png" alt="Gato aventureiro">
     </div>
     <div class="box-txt">
-     
+
       <h2>CATVENTURE: UM PULO DE CADA VEZ</h2>
       <p>Um jogo de plataforma 2D onde você controla um gato aventureiro em busca de tesouros e desafios!</p>
       <a href="#" class="btn-hero">Bora jogar!</a>
@@ -92,12 +92,12 @@
 
   <section id="contato" class="contato">
     <h2>Entre em Contato</h2>
-    <form>
-      <input type="text" id="nome" placeholder="Nome" required />
-      <input type="email" id="email" placeholder="E-mail" required />
-      <input type="tel" id="telefone" placeholder="Telefone" required />
-      <textarea placeholder="Mensagem" rows="5" required></textarea>
-      <button type="button" id="botao">Enviar</button>
+    <form action="#" autocomplete="off" id="form-contato">
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="email" id="email" placeholder="E-mail">
+      <input type="number" id="telefone" placeholder="Telefone">
+      <textarea placeholder="Mensagem" rows="5"></textarea>
+      <button type="submit" id="botao">Enviar</button>
     </form>
   </section>
 
@@ -122,22 +122,52 @@
       });
     });
 
-    document.getElementById('botao').onclick = function () {
-      var nome = document.getElementById('nome').value;
-      var email = document.getElementById('email').value;
-      var telefone = document.getElementById('telefone').value;
+    const form = document.getElementById('contato');
 
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Impede o envio do formulário
+
+      const nome = document.getElementById('nome').value.trim();
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+
+      // Verifica se todos os campos estão vazios
       if (nome === "" && email === "" && telefone === "") {
         alert("Por favor, preencha todos os campos.");
-      } else {
-        if (nome === "") alert("Informe o nome");
-        if (email === "") alert("Informe o email");
-        if (telefone === "") alert("Informe o telefone");
-        if (nome !== "" && email !== "" && telefone !== "") {
-          alert("Formulário enviado com sucesso!");
-        }
+        return;
       }
-    };
+
+      // Verifica campos individualmente
+      if (nome === "") {
+        alert("Informe o nome.");
+        return;
+      }
+
+      if (email === "") {
+        alert("Informe o e-mail.");
+        return;
+      }
+
+      // Validação do formato do e-mail
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailValido.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        emailInput.focus();
+        return;
+      }
+
+      if (telefone === "") {
+        alert("Informe o telefone.");
+        return;
+      }
+
+      // Se tudo estiver certo:
+      alert("Formulário enviado com sucesso!");
+    });
+
+
+
   </script>
 </body>
 
