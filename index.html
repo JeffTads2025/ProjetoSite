@@ -24,7 +24,7 @@
     <div id="hamburger">
       <i class="fas fa-bars"></i>
     </div>
-    <a href="#"><button class="btn-jogar-header">Jogar</button></a>
+    <a href="jogo.html"><button class="btn-jogar-header">Jogar</button></a>
   </header>
 
   <section id="home" class="hero">
@@ -71,6 +71,7 @@
       <img src="imagens/CAT-ICON.jpg" alt="Quadrinho 8">
     </div>
   </section>
+  
 
   <section class="sobre">
     <h2 class="titulo-sobre"><i class="fas fa-paw"></i>Recursos do Jogo</h2>
@@ -167,7 +168,14 @@
     });
 
 
+    window.addEventListener("keydown", function(e) {
+  // Códigos das setas: esquerda (37), cima (38), direita (39), baixo (40)
+  const keys = [37, 38, 39, 40];
 
+  if (keys.includes(e.keyCode)) {
+    e.preventDefault(); // Impede o scroll
+  }
+});
   </script>
 </body>
 
