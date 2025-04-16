@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CATVENTURE: UM PULO DE CADA VEZ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="imagens/paw.cat">
+</head>
+
+<body>
+    <header>
+        <span class="logotipo"><i class="fas fa-paw"></i> CATVENTURE</span>
+        <nav id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#historia">História</a></li>
+                <li><a href="index.html#quadrinhos">Quadrinhos</a></li>
+                <li><a href="index.html#contato">Contatos</a></li>
+                <li><a href="criador.html">Criador</a></li>
+            </ul>
+        </nav>
+        <div id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <a href="jogo.html"><button class="btn-jogar-header">Jogar</button></a>
+    </header>
+
+    <main>
+        <section class="criador" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; padding: 2rem;">
+            <!-- minha foto -->
+            <img src="imagens/Jeff.jpeg" alt="Foto de Jefferson dos Anjos" style="max-width: 250px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
+    
+            <!-- texto sobre mim -->
+            <div style="flex: 1; min-width: 250px;">
+                <p>
+                    Jefferson dos Anjos é professor da rede estadual de ensino em Campo Mourão e atualmente está cursando Tecnologia em Análise e Desenvolvimento de Sistemas (TADS), com foco no aprimoramento contínuo de suas competências na área da tecnologia.
+                </p>
+                <p>
+                    Com interesse em educação, desenvolvimento de sistemas e projetos criativos, Jefferson desenvolveu este site e o jogo aqui apresentado, unindo conhecimento técnico e dedicação à criação de experiências digitais acessíveis e funcionais.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <footer>
+        <p>2025 © CATVENTURE: UM PULO DE CADA VEZ - Todos os direitos reservados. <i class="fas fa-paw"></i></p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+
+        const form = document.getElementById('contato');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio do formulário
+
+            const nome = document.getElementById('nome').value.trim();
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+
+            // Verifica se todos os campos estão vazios
+            if (nome === "" && email === "" && telefone === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Verifica campos individualmente
+            if (nome === "") {
+                alert("Informe o nome.");
+                return;
+            }
+
+            if (email === "") {
+                alert("Informe o e-mail.");
+                return;
+            }
+
+            // Validação do formato do e-mail
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailValido.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                emailInput.focus();
+                return;
+            }
+
+            if (telefone === "") {
+                alert("Informe o telefone.");
+                return;
+            }
+
+        
+            alert("Formulário enviado com sucesso!");
+        });
+
+// Script para travar as setas do site e permitir que seja usado apenas no jogo.
+        window.addEventListener("keydown", function (e) {
+            
+            const keys = [37, 38, 39, 40];
+
+            if (keys.includes(e.keyCode)) {
+                e.preventDefault(); 
+            }
+        });
+    </script>
+</body>
+
+</html>

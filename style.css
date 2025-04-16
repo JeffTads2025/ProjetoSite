@@ -100,6 +100,8 @@ header {
 
 .box-txt p {
   margin-bottom: 20px;
+  text-align: justify;
+  color:  #61dafb;
 }
 
 .btn-hero {
@@ -130,6 +132,7 @@ header {
 
 .historia p {
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .galeria {
@@ -262,7 +265,31 @@ footer {
   display: flex;
   justify-content: center;
 }
+body.page-criador {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
 
+main {
+  flex: 1;
+  padding-top: 50px;
+  padding-bottom: 50px; /* para afastar do footer */
+}
+
+.criador {
+  margin-top: 100px; /* ajuste da altura */
+  padding: 2rem;
+  margin-bottom: 100px;  /* Afasta do footer */
+  max-width: 800px;
+    margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  background-color: #121826;
+  color: #f1f1f1;
+  border-radius: 1rem;
+}
 
 
 @media (max-width: 768px) {
