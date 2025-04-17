@@ -35,9 +35,12 @@
     <div class="box-txt">
 
       <h2>CATVENTURE: UM PULO DE CADA VEZ</h2>
-      <p>É um jogo de plataforma 2D em que o jogador controla um gatinho aventureiro que precisa saltar por obstáculos, coletar itens e desviar de inimigos. O objetivo é divertir e, ao mesmo tempo, estimular habilidades como atenção, coordenação e raciocínio lógico.
+      <p>É um jogo de plataforma 2D em que o jogador controla um gatinho aventureiro que precisa saltar por obstáculos,
+        coletar itens e desviar de inimigos. O objetivo é divertir e, ao mesmo tempo, estimular habilidades como
+        atenção, coordenação e raciocínio lógico.
 
-Desenvolvido com Construct 3 e integrado a um site com HTML, CSS e JavaScript, o projeto foi pensado para ser acessível, educativo e visualmente atrativo, com comandos simples e design responsivo.</p>
+        Desenvolvido com Construct 3 e integrado a um site com HTML, CSS e JavaScript, o projeto foi pensado para ser
+        acessível, educativo e visualmente atrativo, com comandos simples e design responsivo.</p>
       <p>Bora jogar?!</p>
     </div>
   </section>
@@ -74,7 +77,7 @@ Desenvolvido com Construct 3 e integrado a um site com HTML, CSS e JavaScript, o
       <img src="imagens/CAT-ICON.jpg" alt="Quadrinho 8">
     </div>
   </section>
-  
+
 
   <section class="sobre">
     <h2 class="titulo-sobre"><i class="fas fa-paw"></i>Recursos do Jogo</h2>
@@ -171,14 +174,16 @@ Desenvolvido com Construct 3 e integrado a um site com HTML, CSS e JavaScript, o
     });
 
 
-    window.addEventListener("keydown", function(e) {
- 
-  const keys = [37, 38, 39, 40];
+    const jogo = document.getElementById("meu-jogo");
+    jogo.focus();
 
-  if (keys.includes(e.keyCode)) {
-    e.preventDefault(); 
-  }
-});
+    // Impede o scroll quando setas forem pressionadas
+    window.addEventListener("keydown", function (e) {
+        const keys = [37, 38, 39, 40];
+        if (keys.includes(e.keyCode)) {
+            e.preventDefault();
+        }
+    }, { passive: false });
   </script>
 </body>
 
