@@ -53,14 +53,14 @@
             });
         });
 
-        window.addEventListener("keydown", function (e) {
-            // Códigos das setas: esquerda (37), cima (38), direita (39), baixo (40)
-            const keys = [37, 38, 39, 40];
+        
+    window.addEventListener("keydown", function (e) {
+        const keys = [37, 38, 39, 40]; // Setas
+        if (keys.includes(e.keyCode)) {
+            e.preventDefault(); // Bloqueia o scroll
+        }
+    });
 
-            if (keys.includes(e.keyCode)) {
-                e.preventDefault(); // Impede o scroll
-            }
-        });
 
 
 
