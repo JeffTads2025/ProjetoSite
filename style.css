@@ -11,6 +11,8 @@ body {
   background-color: #0d1117;
   color: #e1e8f0;
   line-height: 1.6;
+
+  
 }
 
 
@@ -260,10 +262,12 @@ footer {
 }
 
 .mainjogo {
-  margin: 150px 0;
-
   display: flex;
   justify-content: center;
+  align-items: center;
+  height:100%;
+  padding-top: 85px;
+  padding-bottom: 30px;
 }
 body.page-criador {
   min-height: 100px;
