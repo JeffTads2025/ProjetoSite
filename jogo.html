@@ -53,14 +53,17 @@
             });
         });
 
-        
-    window.addEventListener("keydown", function (e) {
-        const keys = [37, 38, 39, 40]; // Setas
-        if (keys.includes(e.keyCode)) {
-            e.preventDefault(); // Bloqueia o scroll
-        }
-    });
 
+        const jogo = document.getElementById("meu-jogo");
+    jogo.focus();
+
+    // Impede o scroll quando setas forem pressionadas
+    window.addEventListener("keydown", function (e) {
+        const keys = [37, 38, 39, 40];
+        if (keys.includes(e.keyCode)) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 
 
 
